@@ -1,5 +1,5 @@
 <label>{{ name }}</label>
-<select class="places-select" [id]="name" [name]="name" [(ngModel)]="selected" (ngModelChange)="something($event)">
+<select class="places-select" [id]="name" [name]="name" [(ngModel)]="selected" (ngModelChange)="onSelectChange($event)">
   <option
     *ngFor="let place of places" 
     [ngValue]="place">

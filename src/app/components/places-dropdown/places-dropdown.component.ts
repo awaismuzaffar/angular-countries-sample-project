@@ -12,7 +12,7 @@ export class PlacesDropdownComponent {
   @Input() selected: any;
   @Output() selectedChange = new EventEmitter();
 
-  something(value) {
+  onSelectChange(value) {
     this.selectedChange.emit(value);
   }
 }
