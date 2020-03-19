@@ -1,0 +1,8 @@
+<label>{{ name }}</label>
+<select class="places-select" [id]="name" [name]="name" [(ngModel)]="selected" (ngModelChange)="something($event)">
+  <option
+    *ngFor="let place of places" 
+    [ngValue]="place">
+    {{ place.name }}
+  </option>
+</select>

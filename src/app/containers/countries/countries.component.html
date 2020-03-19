@@ -1,0 +1,36 @@
+<h1>Countries information</h1>
+<form #f="ngForm" name="form">
+    <div class="form-row">
+      <app-places-dropdown 
+        [name]="'Regions'"
+        [places]="regions"
+        [(selected)]="selectedRegion"
+        (change)="regionSelect()"
+      ></app-places-dropdown>
+    </div>
+    <div class="form-row" *ngIf="selectedRegion">
+      <app-places-dropdown 
+        [name]="'Countries'"
+        [places]="((countries$ | async)[selectedRegion?.key])"
+        [(selected)]="selectedCountry"
+      ></app-places-dropdown>
+    </div>
+    <div *ngIf="selectedCountry">
+      <table class="country-table">
+        <tr>
+          <th>Name</th>
+          <th>Capital</th>
+          <th>Population</th>
+          <th>Currencies</th>
+          <th>Flag</th>
+        </tr>
+        <tr>
+          <td>{{ selectedCountry?.name }}</td>
+          <td>{{ selectedCountry?.capital }}</td>
+          <td>{{ selectedCountry?.population | number }}</td>
+          <td>{{ selectedCountry?.currencies | json }}</td>
+          <td><img class="country-flag" [src]="selectedCountry?.flag" /></td>
+        </tr>
+      </table>
+    </div>
+</form>
