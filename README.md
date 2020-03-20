@@ -17,7 +17,7 @@ The component (places-dropdown) is a resuable one and is used for the regions an
 
 ## Other imporovements that need to be made
 
-More in-depth unit testing and e2e testing. The effects and reducers require tests around then.
+More in-depth unit testing and e2e testing. The effects and reducers require tests around them.
 
 Make use of interfaces.
 
